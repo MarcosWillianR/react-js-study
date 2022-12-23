@@ -17,9 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <Image src={logoSVG} alt="" />
       </Header>
 
-      <main className={roboto.className}>
+      <div className={roboto.className}>
         <Component {...pageProps} />
-      </main>
+      </div>
     </Container>
   )
 }
