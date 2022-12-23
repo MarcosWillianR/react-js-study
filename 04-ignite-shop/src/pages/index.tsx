@@ -1,7 +1,7 @@
 import { styled } from "../styles"
 
 const Button = styled('button', {
-  backgroundColor: '$test'
+  backgroundColor: '$green500'
 })
 
 export default function Home() {
