@@ -32,7 +32,7 @@ export default function Home({ products }: HomeProps) {
       {products?.map(({ id, imageUrl, name, price }) => (
         <Link href={`/product/${id}`} key={id} className="keen-slider__slide">
           <Product>
-            <Image src={imageUrl} alt="" width={520} height={480} />
+            <Image src={imageUrl} alt={name} width={520} height={480} />
 
             <footer>
               <strong>{name}</strong>
