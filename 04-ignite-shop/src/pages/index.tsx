@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
+import Head from "next/head";
 import Link from "next/link";
 import { useKeenSlider } from 'keen-slider/react';
 import Stripe from "stripe";
@@ -28,25 +29,31 @@ export default function Home({ products }: HomeProps) {
   });
 
   return (
-    <HomeContainer ref={sliderRef} className="keen-slider">
-      {products?.map(({ id, imageUrl, name, price }) => (
-        <Link
-          href={`/product/${id}`}
-          key={id}
-          className="keen-slider__slide"
-          prefetch={false}
-        >
-          <Product>
-            <Image src={imageUrl} alt={name} width={520} height={480} />
+    <>
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
 
-            <footer>
-              <strong>{name}</strong>
-              <span>{price}</span>
-            </footer>
-          </Product>
-        </Link>
-      ))}
-    </HomeContainer>
+      <HomeContainer ref={sliderRef} className="keen-slider">
+        {products?.map(({ id, imageUrl, name, price }) => (
+          <Link
+            href={`/product/${id}`}
+            key={id}
+            className="keen-slider__slide"
+            prefetch={false}
+          >
+            <Product>
+              <Image src={imageUrl} alt={name} width={520} height={480} />
+
+              <footer>
+                <strong>{name}</strong>
+                <span>{price}</span>
+              </footer>
+            </Product>
+          </Link>
+        ))}
+      </HomeContainer>
+    </>
   )
 }
 
