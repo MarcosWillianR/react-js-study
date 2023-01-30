@@ -1,7 +1,8 @@
-import { Button, Heading, MultiStep, Text, TextInput } from '@ignite-ui/react'
+import { Button, Heading, MultiStep, Text } from '@ignite-ui/react'
 import { ArrowRight } from 'phosphor-react'
 import { Container, Header } from '../styles'
-import { api } from '../../lib/axios'
+import { ConnectBox, ConnectItem } from './styles'
+// import { api } from '../../lib/axios'
 
 export default function Register() {
   // async function handleRegister() {
@@ -19,6 +20,21 @@ export default function Register() {
 
         <MultiStep size={4} currentStep={2} />
       </Header>
+
+      <ConnectBox>
+        <ConnectItem>
+          <Text>Google Calendar</Text>
+          <Button variant="secondary" size="sm">
+            Conectar
+            <ArrowRight />
+          </Button>
+        </ConnectItem>
+
+        <Button type="submit">
+          Próximo passo
+          <ArrowRight />
+        </Button>
+      </ConnectBox>
     </Container>
   )
 }
