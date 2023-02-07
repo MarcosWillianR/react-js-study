@@ -14,8 +14,8 @@ export default function Register() {
   const isSignedIn = session.status === 'authenticated'
 
   async function handleConnectCalendar() {
-    await signIn('google', { 
-      callbackUrl: '/register/connect-calendar'
+    await signIn('google', {
+      callbackUrl: '/register/connect-calendar',
     })
   }
 
