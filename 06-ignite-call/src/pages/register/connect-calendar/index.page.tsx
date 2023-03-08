@@ -6,7 +6,7 @@ import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
 // import { api } from '../../lib/axios'
 
-export default function Register() {
+export default function ConnectCalendar() {
   const session = useSession()
   const router = useRouter()
 
